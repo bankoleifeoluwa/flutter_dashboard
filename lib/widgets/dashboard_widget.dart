@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dashboard/widgets/line_chart_card.dart';
 
 import 'activity_details_card.dart';
+import 'bar_graph_widget.dart';
 import 'header_widget.dart';
 
 class DashboardWidget extends StatelessWidget {
@@ -11,15 +12,22 @@ class DashboardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 18),
-        const HeaderWidget(),
-        const SizedBox(height: 15),
-        ActivityDetailsCard(),
-        SizedBox(height: 18),
-        const LineChartCard()
-      ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: Column(
+          children: [
+            const SizedBox(height: 18),
+            const HeaderWidget(),
+            const SizedBox(height: 15),
+            ActivityDetailsCard(),
+            SizedBox(height: 18),
+            const LineChartCard(),
+            const SizedBox(height: 18),
+            const BarGraphCard()
+          ],
+        ),
+      ),
     );
   }
 }
